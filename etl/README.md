@@ -10,6 +10,3 @@ Blueprint 2 :  incremental by sequence id
 Blueprint 3 :  full data
 
 
-scp -r /home/crh/ws2020/repo/cheetah_etl appadmin@10.224.24.144:/nfs
-
-
