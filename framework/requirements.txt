@@ -1,0 +1,4 @@
+PyHive==0.6.2
+PyMySQL==0.10.0 
+Jinja2==2.10.3
+

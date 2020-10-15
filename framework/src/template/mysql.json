@@ -1,0 +1,45 @@
+{
+    "job": {
+        "setting": {
+            "speed": {
+                "channel": 1
+            }
+        },
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "username": "aldidbadmin@aceta008ds01",
+                        "password": "T4C8478uq3yWmN%5n8V5c",
+                        "connection": [
+                            {
+                                "querySql": [
+                                    "{{ sql_query }}" 
+                                ],
+                                "jdbcUrl": [
+                                    "jdbc:mysql://aceta008ds01.mysql.database.chinacloudapi.cn:3306"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "defaultFS": "hdfs://na-ha",
+                        "fileType": "orc",
+                        "path": "{{ hdfs_path }}",
+                        "fileName": "{{ fileName }}",
+                        "writeMode": "append",
+                        "fieldDelimiter": ",",
+                        "compress": "NONE",
+                        "column": [ 
+                            {{ hive_table_columns }}
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

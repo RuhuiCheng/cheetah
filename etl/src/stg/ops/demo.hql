@@ -1,0 +1,2 @@
+-- flow_tag=demo
+-- incr_type=by_date

@@ -1,0 +1,45 @@
+{
+    "job": {
+        "setting": {
+            "speed": {
+                "channel": 1
+            }
+        },
+        "content": [
+            {
+                "reader": {
+                    "name": "sqlserverreader",
+                    "parameter": {
+                        "username": "appdbadmin",
+                        "password": "rmjCcaybz0SvykfkicjpA",
+                        "connection": [
+                            {
+                                "querySql": [
+                                    "{{ sql_query }}" 
+                                ],
+                                "jdbcUrl": [
+                                    "jdbc:sqlserver://10.224.25.7:1433"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "defaultFS": "hdfs://localhost:9000",
+                        "fileType": "orc",
+                        "path": "{{ hdfs_path }}",
+                        "fileName": "{{ fileName }}",
+                        "writeMode": "append",
+                        "fieldDelimiter": ",",
+                        "compress": "NONE",
+                        "column": [
+                            {{ hive_table_columns }}
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,2 @@
+-- flow_tag=dim_date
+-- incr_type=by_date

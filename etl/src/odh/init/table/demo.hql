@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS odh.demo (
+c1     STRING COMMENT '',
+c2     STRING COMMENT '',
+c3     BIGINT COMMENT '')
+COMMENT 'demo'
+STORED AS ORC
+TBLPROPERTIES("orc.compress"="snappy")
